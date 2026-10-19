@@ -17,13 +17,13 @@ public class ProductoControlador {
 
     // 1. Mostrar la lista y el formulario
     //Ejecuta el método cuando alguien entre en localhost/productos
-    @GetMapping("/productos")
-    public String mostrarProductos(Model model) {//Model model es un objeto que permite pasar objetos de la lista a html
+    @GetMapping("/productos")//Se llama así porque el html se llama "productos"
+    public String mostrarProductos(Model model) {//Model model es un objeto que permite pasar objetos de la lista a html como si fuera una bandeja
 
-        model.addAttribute("productos", productos);
-        model.addAttribute("nuevoProducto", new Producto());
+        model.addAttribute("listaProductos", productos);//Añade la lista productos a ${listaproductos} mediante model
+        model.addAttribute("nuevoProducto", new Producto());//Crea en el modelo un nuevo producto. Este se recoge en la parte del html con ${nuevoProducto} 
 
-        return "productos";
+        return "productos";//SOLAMENTE ESTO, NOMBRE IGUAL QUE EL NOMBRE DEL ARCHIVO HTML
     }
 
     // 2. Procesar el envío del formulario (POST)
