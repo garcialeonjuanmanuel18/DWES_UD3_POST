@@ -1,4 +1,4 @@
-package ies.jandula.post;
+package IES.Jandula.POST;
 
 public class Producto {
 

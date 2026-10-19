@@ -1,4 +1,4 @@
-package ies.jandula.post;
+package IES.Jandula.POST;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +27,9 @@ public class ProductoControlador {
     }
 
     // 2. Procesar el envío del formulario (POST)
-    @PostMapping("/productos/guardar")
+    @PostMapping("/productos/guardar")//dirección que recibe los datos del formulario
     public String guardarProducto(
-            @ModelAttribute("nuevoProducto") Producto producto,
+            @ModelAttribute("nuevoProducto") Producto producto, 
             RedirectAttributes redirectAttributes) {
 
         // Añadimos el nuevo producto recibido a la lista
@@ -37,7 +37,7 @@ public class ProductoControlador {
 
         // Añadimos un mensaje de confirmación
         redirectAttributes.addFlashAttribute(
-                "mensajeExito",
+                "mensajeExito", // añadimos en mensajeExito lo que hay justo debajo
                 "¡Producto '" + producto.getNombre()
                         + "' agregado correctamente!");
 
